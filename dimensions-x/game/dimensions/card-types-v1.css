@@ -1,0 +1,18 @@
+/* Tipos de carta: a cor acompanha o tipo, independentemente da dimensão. */
+.card.type-creature{--type-surface:#193d36;--type-text:#b6f3d8;--type-base:#102720}
+.card.type-spell{--type-surface:#40305c;--type-text:#eddaff;--type-base:#261d36}
+.card.type-creature,.card.type-spell{background:var(--type-base);border-color:var(--type-text)}
+.card.type-creature .card-top,.card.type-spell .card-top{background:var(--type-surface);color:var(--type-text)}
+.card.type-creature .cost,.card.type-spell .cost{background:var(--type-base);color:var(--type-text)}
+.card.type-creature .stats,.card.type-spell .stats{background:var(--type-base)}
+.card.type-creature .state,.card.type-spell .state,
+#battle .field .card .state,#battle .hand .card .state{
+  display:flex;align-items:center;justify-content:center;gap:4px;flex-shrink:0;
+  min-height:24px;padding:2px 4px;background:var(--type-surface);color:var(--type-text);
+}
+.card-type-icon{display:inline-flex;align-items:center;justify-content:center;flex:0 0 20px;width:20px;height:20px}
+.card-type-icon svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.card .state>span:empty{display:none}
+.card.rare .state>span{font-weight:700}
+#battle .field .card .state{font-size:8px;line-height:1.1}
+@media(max-width:650px){#battle .field .card .state>span{font-size:7px;overflow-wrap:anywhere}.card-type-icon{flex-basis:16px;width:16px;height:16px}.card-type-icon svg{width:16px;height:16px}}
